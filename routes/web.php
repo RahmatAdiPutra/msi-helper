@@ -1,3 +1,5 @@
 <?php
 
-Route::get('msi/helper', 'Msi\Falcon\Http\Controllers\HelperController@index');
+Route::group(['namespace' => 'Msi\Falcon\Http\Controllers'], function() {
+    Route::get('msi/helper', ['uses' => 'HelperController@index']);
+});
