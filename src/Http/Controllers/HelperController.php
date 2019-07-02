@@ -25,7 +25,10 @@ class HelperController extends BaseController
                 $allow =  Str::contains($v['file_path'], '.mpg');
                 
                 if ($allow) {
-                    $data['song'][$v['id']] = Str::replaceArray('.mpg', ['.mp4'], $v['file_path']);
+                    $filename = Str::replaceArray('.mpg', ['.mp4'], $v['file_path']);
+                    $data['test'] = Song::find($v['id']);
+
+                    $data['song'][$v['id']] = $filename;
                     $counter++;
                 }
             }
