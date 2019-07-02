@@ -20,7 +20,7 @@ class HelperController extends BaseController
             $song = Song::all();
             $data['number_of_songs'] = $song->count();
 
-            if ($data['number_of_songs'] > $data['number_of_updates']) {
+            if ($data['number_of_songs'] >= $data['number_of_updates']) {
                 foreach ($song as $k => $v) {
                     if ($request->much == $counter) {
                         break;
