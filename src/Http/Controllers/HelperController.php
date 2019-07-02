@@ -9,6 +9,6 @@ class HelperController extends BaseController
 {
     public function song()
     {
-        return Song::all();
+        return Song::all()->pluck('id','file_path');
     }
 }
