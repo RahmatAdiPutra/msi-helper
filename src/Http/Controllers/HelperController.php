@@ -3,23 +3,18 @@
 namespace Msi\Falcon\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Http\Request;
 use Msi\Falcon\Models\Ktv\Song;
-use Illuminate\Support\Facades\File;
 
 class HelperController extends BaseController
 {
-    public function song()
+    public function song(Request $request)
     {
         $data = [];
-        $song = Song::all();
-        foreach ($song as $k => $v) {
-            $data['song'][$v['id']] = $v['file_path'];
-        }
-
-        $files = File::files('http://192.168.7.224/');
-        foreach ($files as $file) {
-            $data['files'][] = pathinfo($file);
-        }
-        return $data['files'];
+        // $song = Song::all();
+        // foreach ($song as $k => $v) {
+        //     $data['song'][$v['id']] = $v['file_path'];
+        // }
+        return $request->much;
     }
 }
