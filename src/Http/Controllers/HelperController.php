@@ -13,13 +13,13 @@ class HelperController extends BaseController
     {
         $data = [];
 
-        $data['much'] = $request->much;
+        $data['number_of_updates'] = $request->much;
 
-        if ($data['much'] > 0) {
+        if ($data['number_of_updates'] > 0) {
             $counter = 0;
-            $song = Song::all();
+            $data['number_of_song'] = Song::all();
 
-            if ($song->count() > $data['much']) {
+            if ($data['number_of_song']->count() > $data['number_of_updates']) {
                 foreach ($song as $k => $v) {
                     if ($request->much == $counter) {
                         break;
@@ -32,7 +32,7 @@ class HelperController extends BaseController
                         $update = Song::find($v['id']);
                         $update->file_path = $filename;
                         $update->save();
-                        $data['song'][] = $update;
+                        $data['songs'][] = $update;
                         $counter++;
                     }
                 }
