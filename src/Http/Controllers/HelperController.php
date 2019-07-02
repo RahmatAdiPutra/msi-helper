@@ -15,6 +15,8 @@ class HelperController extends BaseController
         // foreach ($song as $k => $v) {
         //     $data['song'][$v['id']] = $v['file_path'];
         // }
-        return $request->much;
+        if ($request->much > 0) {
+            return $request->much;
+        }
     }
 }
