@@ -13,7 +13,7 @@ class HelperServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('Msi\Falcon\Http\Controllers\HelperController');
+        $this->app->make(__DIR__.'..\Http\Controllers\HelperController');
     }
 
     /**
