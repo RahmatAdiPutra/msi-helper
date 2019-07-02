@@ -2,9 +2,9 @@
 
 namespace Msi\Falcon\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller as BaseController;
 
-class HelperController extends Controller
+class HelperController extends BaseController
 {
     public function index()
     {

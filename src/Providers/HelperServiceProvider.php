@@ -14,6 +14,9 @@ class HelperServiceProvider extends ServiceProvider
     public function register()
     {
         // $this->app->make(__DIR__.'..\Http\Controllers\HelperController');
+        $this->app['router']->group(['namespace' => 'Msi\Falcon\Http\Controllers'], function () {
+            require __DIR__.'/../../routes/web.php';
+        });
     }
 
     /**
