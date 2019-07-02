@@ -12,7 +12,7 @@ class HelperController extends BaseController
         $data = [];
         $song = Song::all();
         foreach ($song as $k => $v) {
-            $data[] = $v;
+            $data[] = $v['id'];
         } 
         return $data;
     }
