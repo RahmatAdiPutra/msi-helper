@@ -33,7 +33,7 @@ class HelperController extends BaseController
                         $update = Song::find($v['id']);
                         $update->file_path = $filename;
                         $update->save();
-                        $data['song'][] = $update;
+                        // $data['songs'][] = $update;
                         $counter++;
                     }
                 }
