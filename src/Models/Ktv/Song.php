@@ -7,7 +7,7 @@ class Song extends Model
 {
     public function __construct(array $attributes = [])
     {
-        $this->connection = env('DB_FALCON_CONNECTION', 'mysql');
+        $this->connection = env('DB_CONNECTION', 'mysql');
         
         parent::__construct($attributes);
     }
