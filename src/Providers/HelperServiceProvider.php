@@ -23,6 +23,9 @@ class HelperServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->app['router']->group(['namespace' => 'Msi\Falcon\Http\Controllers'], function () {
+            require __DIR__.'/../../routes/web.php';
+        });
         $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
     }
 }
