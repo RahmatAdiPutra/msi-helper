@@ -6,7 +6,7 @@ use Illuminate\Routing\Controller as BaseController;
 
 class HelperController extends BaseController
 {
-    public function index()
+    public function song()
     {
         return 'Hello helper';
     }

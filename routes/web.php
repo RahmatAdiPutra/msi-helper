@@ -1,3 +1,3 @@
 <?php
 
-Route::get('msi/helper', 'HelperController@index');
+Route::get('msi/helper/ktv', 'HelperController@song');
