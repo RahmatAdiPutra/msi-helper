@@ -10,13 +10,19 @@ class HelperController extends BaseController
 {
     public function song(Request $request)
     {
-        $data = [];
-        // $song = Song::all();
-        // foreach ($song as $k => $v) {
-        //     $data['song'][$v['id']] = $v['file_path'];
-        // }
         if ($request->much > 0) {
-            return $request->much;
+            $data = [];
+            $counter = 0;
+            $song = Song::all();
+
+            foreach ($song as $k => $v) {
+                if ($request->much == $counter) {
+                    break;
+                }
+                $data['song'][$v['id']] = $v['file_path'];
+                $counter++;
+            }
+            return $data['song'];
         }
     }
 }
