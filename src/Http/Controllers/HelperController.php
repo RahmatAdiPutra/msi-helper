@@ -9,6 +9,11 @@ class HelperController extends BaseController
 {
     public function song()
     {
-        return Song::all()->pluck('id','file_path');
+        $data = [];
+        $song = Song::all();
+        foreach ($song as $k => $v) {
+            $data[] = $v;
+        } 
+        return $data;
     }
 }
