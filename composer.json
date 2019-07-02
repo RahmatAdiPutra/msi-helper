@@ -1,0 +1,32 @@
+{
+    "name": "msi/helper",
+    "description": "Helper for requirement",
+    "keywords": ["msi", "helper"],
+    "type": "library",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Rahmat Adi Putra",
+            "email": "rahmat.adi.putra.21@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Msi\\Helper\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Msi\\Helper\\Test\\": "test/"
+        }
+    },
+    "extra": {
+	    "laravel": {
+	        "providers": [
+	            "Msi\\Helper\\Providers\\HelperServiceProvider"
+	        ]
+	    }
+	}
+}
